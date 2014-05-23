@@ -15,6 +15,14 @@ function success(pos) {
   $('.js-lat').text(crd.latitude);
   $('.js-long').text(crd.longitude);
   $('.js-acc').text(crd.accuracy +'m');
+
+  $.ajax({
+  	url: 'https://api.forecast.io/forecast/4cbf11a0b6a5166782b8d4cb9d5defef/47.105237,8.408532',
+  	success: function(data) {
+  	console.log(data);
+  	}
+  });
+
 };
 
 function error(err) {
