@@ -29,7 +29,7 @@ function success(pos) {
   		$('.js-temp').text(data.currently.apparentTemperature + '°C');
   		$('.js-windsp').text(data.currently.windSpeed + 'm/s');
 
-  	}
+  	});
 
   $.ajax({
   	url: 'https://maps.googleapis.com/maps/api/geocode/json',
@@ -37,18 +37,18 @@ function success(pos) {
   		latlng: crd.latitude + ',' + crd.longitude,
   		sensor: true
   	},
-  	dataType: 'jsonp',
   	success: function(data) {
   		console.log(data);
 
   	}
+
+  });
 
 
   	var img = new Image();
     img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=600x600&sensor=true";
 
     output.appendChild(img);
-  });
 
 };
 
