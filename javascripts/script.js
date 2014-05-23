@@ -4,8 +4,10 @@ var options = {
   maximumAge: 0
 };
 
+
 function success(pos) {
   var crd = pos.coords;
+  var output = document.getElementById("out");
 
   console.log('Your current position is:');
   console.log('Latitude : ' + crd.latitude);
