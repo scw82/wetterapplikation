@@ -11,6 +11,10 @@ function success(pos) {
   console.log('Latitude : ' + crd.latitude);
   console.log('Longitude: ' + crd.longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
+
+  $('.js-lat').text(crd.latitude);
+  $('.js-long').text(crd.longitude);
+  $('.js-acc').text(crd.accuracy +'m');
 };
 
 function error(err) {
