@@ -15,7 +15,7 @@ function success(pos) {
   $('.js-lat').text(crd.latitude);
   $('.js-long').text(crd.longitude);
   $('.js-acc').text(crd.accuracy +'m');
-  
+
 
   $.ajax({
   	url: 'https://api.forecast.io/forecast/4cbf11a0b6a5166782b8d4cb9d5defef/' + crd.latitude + ',' + crd.longitude,
@@ -24,7 +24,7 @@ function success(pos) {
   	},
   	dataType: 'jsonp',
   	success: function(data) {
-  	console.log(data);
+  		$('.js-temp').text(data.currently.apparentTemperature + '°C');
   	}
   });
 
