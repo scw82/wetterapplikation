@@ -26,6 +26,11 @@ function success(pos) {
   	success: function(data) {
   		$('.js-temp').text(data.currently.apparentTemperature + '°C');
   		$('.js-windsp').text(data.currently.windSpeed + 'm/s');
+
+  		var img = new Image();
+    img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
   	}
   });
 
