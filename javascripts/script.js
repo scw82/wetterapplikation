@@ -18,7 +18,7 @@ function success(pos) {
 
   $.ajax({
   	url: 'https://api.forecast.io/forecast/4cbf11a0b6a5166782b8d4cb9d5defef/47.105237,8.408532',
-  	jsonp: 'callback',
+  	dataType: 'jsonp',
   	success: function(data) {
   	console.log(data);
   	}
