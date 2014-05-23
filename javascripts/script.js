@@ -25,6 +25,7 @@ function success(pos) {
   	dataType: 'jsonp',
   	success: function(data) {
   		$('.js-temp').text(data.currently.apparentTemperature + '°C');
+  		$('.js-windsp').text(data.currently.windSpeed + 'm/s');
   	}
   });
 
