@@ -48,7 +48,7 @@ function success(pos) {
 
   var output = document.getElementById("out");
   var img = new Image();
-  img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=600x600&sensor=true";
+  img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=400x400&sensor=true";
 
   output.appendChild(img);
 
