@@ -39,17 +39,18 @@ function success(pos) {
   		sensor: true
   	},
   	success: function(data) {
-  		console.log(data);
+  		$('.js-loc').text(data.results[0].formatted_address);
+      console.log(data);
 
   	}
 
   });
 
-    	var output = document.getElementById("out");
-  	var img = new Image();
-    img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=600x600&sensor=true";
+  var output = document.getElementById("out");
+  var img = new Image();
+  img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + crd.latitude + "," + crd.longitude + "&zoom=13&size=600x600&sensor=true";
 
-    output.appendChild(img);
+  output.appendChild(img);
 
 
 };
