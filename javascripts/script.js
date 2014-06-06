@@ -62,9 +62,9 @@ function success(pos) {
       },
         success: function(data) {
         console.log(data);
-        $('js-cusadd-result').text(
-          data.results[0].geometry.location.lat
-          + ',' +
+        $('.js-cusadd-result').text(
+          data.results[0].geometry.location.lat +
+          ',' +
           data.results[0].geometry.location.lng)
       }
     });
