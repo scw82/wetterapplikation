@@ -66,6 +66,10 @@ function success(pos) {
           data.results[0].geometry.location.lat +
           ',' +
           data.results[0].geometry.location.lng)
+        $('.js-lat').text(data.results[0].geometry.location.lat);
+        $('.js-long').text(data.results[0].geometry.location.lng);
+        $('.js-loc').text(data.results[0].formatted_address);
+        $('.js-acc').text(crd.accuracy +'m');
       }
     });
   });
