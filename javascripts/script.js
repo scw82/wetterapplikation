@@ -28,6 +28,7 @@ function success(pos) {
   	success: function(data) {
   		$('.js-temp').text(data.currently.apparentTemperature + '°C');
   		$('.js-windsp').text(data.currently.windSpeed + 'm/s');
+      $('.js-icon').text(data.hourly.data[0].icon);
   	}
 
   });
@@ -44,6 +45,20 @@ function success(pos) {
 
   	}
 
+  });
+
+  //http://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=true_or_false
+
+
+  $.ajax({
+    url:'http://maps.googleapis.com/maps/api/geocode/json',
+    data: {
+      address: 'Schiffmannshof, 6044+Udligenswil',
+      sensor: true;
+    },
+    success: function(data) {
+      console.log(data);
+    }
   });
 
   var output = document.getElementById("out");
