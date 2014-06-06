@@ -71,11 +71,22 @@ function success(pos) {
         $('.js-loc').text(data.results[0].formatted_address);
         $('.js-acc').text(crd.accuracy +'m');
 
-        var output = document.getElementById("out");
-      var img = new Image();
-      img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng + "&zoom=13&size=400x400&sensor=true";
+        $.ajax({
+    url: 'https://api.forecast.io/forecast/4cbf11a0b6a5166782b8d4cb9d5defef/' + data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng,
+    data: {
+      units: 'si'
+    },
+    dataType: 'jsonp',
+    success: function(data) {
+      $('.js-temp').text(data.currently.apparentTemperature + '°C');
+      $('.js-windsp').text(data.currently.windSpeed + 'm/s');
+      $('.js-icon').text(data.hourly.data[0].icon);
+    }
 
-        output.appendChild(img);
+  });
+
+
+
       }
     });
   });
