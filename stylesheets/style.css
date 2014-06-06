@@ -16,3 +16,8 @@
 	font-family: 'MeteoconsRegular';
 	font-size: 3em;
 }
+
+.symbol:before {
+	font-family: 'MeteoconsRegular';
+	content: data-icon;
+}
