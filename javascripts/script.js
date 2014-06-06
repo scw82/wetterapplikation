@@ -70,6 +70,12 @@ function success(pos) {
         $('.js-long').text(data.results[0].geometry.location.lng);
         $('.js-loc').text(data.results[0].formatted_address);
         $('.js-acc').text(crd.accuracy +'m');
+
+        var output = document.getElementById("out");
+      var img = new Image();
+      img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng + "&zoom=13&size=400x400&sensor=true";
+
+        output.appendChild(img);
       }
     });
   });
