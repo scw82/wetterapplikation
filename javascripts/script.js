@@ -54,7 +54,7 @@ function success(pos) {
     url:'http://maps.googleapis.com/maps/api/geocode/json',
     data: {
       address: 'Schiffmannshof, 6044+Udligenswil',
-      sensor: true;
+      sensor: false;
     },
     success: function(data) {
       console.log(data);
