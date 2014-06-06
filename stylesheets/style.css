@@ -19,5 +19,5 @@
 
 .symbol:before {
 	font-family: 'MeteoconsRegular';
-	content: data-icon;
+	content: attr(data-icon);
 }
