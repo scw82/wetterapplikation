@@ -4,6 +4,12 @@ var options = {
   maximumAge: 0
 };
 
+var weatherIcons = {
+  'clear-day': 'B',
+  'clear-night': 'C',
+  'rain': 'R';
+}
+
 
 function success(pos) {
   var crd = pos.coords;
@@ -28,7 +34,7 @@ function success(pos) {
   	success: function(data) {
   		$('.js-temp').text(data.currently.apparentTemperature + '°C');
   		$('.js-windsp').text(data.currently.windSpeed + 'm/s');
-      $('.js-icon').text(data.hourly.data[0].icon);
+      $('.js-symbol').text(weatherIcons[data.currently.icon]);
   	}
 
   });
@@ -117,3 +123,5 @@ var getWeatherData = function(lat, lng, callback) {
 }
 
 navigator.geolocation.getCurrentPosition(success, error, options);
+
+
