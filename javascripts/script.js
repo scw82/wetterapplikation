@@ -49,17 +49,23 @@ function success(pos) {
 
   //http://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=true_or_false
 
+  $('.js-custom-address').on('click','a', function(event){
+      event.preventDefault();
 
-  $.ajax({
-    url:'http://maps.googleapis.com/maps/api/geocode/json',
-    data: {
-      address: 'Schiffmannshof, 6044+Udligenswil',
-      sensor: false
-    },
-    success: function(data) {
-      console.log(data);
+      var address = $('input','js-custom-address').val();
+
+      $.ajax({
+        url:'http://maps.googleapis.com/maps/api/geocode/json',
+        data: {
+        address: address,
+        sensor: false
+      },
+        success: function(data) {
+        console.log(data);
     }
   });
+  });
+
 
   var output = document.getElementById("out");
   var img = new Image();
