@@ -128,7 +128,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 $.ajax({
     url: 'https://maps.googleapis.com/maps/api/geocode/json',
     data: {
-          address: 'Sao Paolo',
+          address: 'Sao Paulo',
           sensor: false
     },
     success: function(data) {
@@ -171,7 +171,7 @@ $.ajax({
           dataType: 'jsonp',
           success: function(data) {
             $('.js-temp-janeiro').text
-            data.currently.summary +
+            data.currently.summary + ' '
             data.currently.temperature + 'C°'
           }
 
