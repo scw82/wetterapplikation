@@ -170,9 +170,7 @@ $.ajax({
           },
           dataType: 'jsonp',
           success: function(data) {
-            $('.js-temp-janeiro').text
-            (data.currently.summary + ' '
-            data.currently.temperature + 'C°');
+            $('.js-temp-janeiro').text(data.currently.summary + ' ' + data.currently.temperature + 'C°');
           }
 
         });
