@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var success = function(pos) {
 		var crd = pos.coords;
 
-		$('.js-current-position').text(crd.latitude + ' ' + crd.longitude);
+		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 	};
 
 	var error = function() {
