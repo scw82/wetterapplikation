@@ -11,12 +11,16 @@ $(document).ready(function() {
 		localStorage.setItem('language','de');
 	}
 
+	if(localStorage.getItem('pos') === null) {
+		localStorage.setItem('pos',null);
+	}
+
 
 	var getAddress = function(pos) {
 
 		if (typeof pos !== 'undefined'){
 			window.crd = pos.coords;
-			localStorage.setItem('pos',crd.latitude + ',' + crd.longitude);
+			localStorage.setItem('pos', JSON.stringify(pos.coords));
 		}
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
