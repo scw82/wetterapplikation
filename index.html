@@ -15,7 +15,7 @@
 
 <div data-role="page" id="main">
 
-	<div data-role="panel" id="menu" data-display="push">
+	<div data-role="panel" id="menu-main" data-display="push">
 		<ul data-role="listview">
 			<li><a href="#main">Main</a></li>
 			<li><a href="#custom">Custom page</a></li>
@@ -25,7 +25,7 @@
 
 	<div data-role="header">
 		<h1>Main</h1>
-		<a href="#menu" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+		<a href="#menu-main" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
@@ -37,7 +37,7 @@
 
 <div data-role="page" id="custom">
 
-	<div data-role="panel" id="menucustom" data-display="push">
+	<div data-role="panel" id="menu-custom" data-display="push">
 		<ul data-role="listview">
 			<li><a href="#main">Main</a></li>
 			<li><a href="#custom">Custom page</a></li>
@@ -47,7 +47,29 @@
 
 	<div data-role="header">
 		<h1>Custom page</h1>
-		<a href="#menucustom" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+		<a href="#menu-custom" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+
+<!-- Settings -->
+
+<div data-role="page" id="settings">
+
+	<div data-role="panel" id="menu-settings" data-display="push">
+		<ul data-role="listview">
+			<li><a href="#main">Main</a></li>
+			<li><a href="#custom">Custom page</a></li>
+			<li><a href="#settings">Settings</a></li>
+		</ul>
+	</div><!-- /panel -->
+
+	<div data-role="header">
+		<h1>Settings</h1>
+		<a href="#menu-settings" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
