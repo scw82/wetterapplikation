@@ -17,10 +17,10 @@ $(document).ready(function() {
 
 		$.ajax({
   		url: 'https://maps.googleapis.com/maps/api/geocode/json',
-  		data: {
-  		latlng: crd.latitude + ',' + crd.longitude,
-  		language: 'de',
-  		sensor: true
+	  		data: {
+	  		latlng: crd.latitude + ',' + crd.longitude,
+	  		language: localStorage['language'],
+	  		sensor: true
   		},
   		success: function(data) {
   		$('.js-loc-address').text(data.results[0].formatted_address);
