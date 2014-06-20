@@ -33,4 +33,9 @@ $(document).ready(function() {
 	};
 
 	navigator.geolocation.getCurrentPosition(success, error, options);
+
+	$(document).on('change','.js-language',function() {
+		console.log($(this).val());
+	});
+
 });
