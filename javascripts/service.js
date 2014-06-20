@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	// Default-Sprache setzen
 	if(localStorage.getItem('language') === null) {
-		localStorage.setItem('language') = 'de';
+		localStorage.setItem('language','de');
 	}
 
 
