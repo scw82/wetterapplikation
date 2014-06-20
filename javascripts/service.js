@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 		if (typeof pos !== 'null') {
 			//window.crd = pos.coords;
+			var crd = pos.coords;
 			localStorage.setItem('pos', JSON.stringify(pos.coords));
 		}
 
