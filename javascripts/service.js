@@ -15,7 +15,7 @@ $(document).ready(function() {
   		url: 'https://maps.googleapis.com/maps/api/geocode/json',
   		data: {
   		latlng: crd.latitude + ',' + crd.longitude,
-  		language: "fr",
+  		language: 'de',
   		sensor: true
   		},
   		success: function(data) {
