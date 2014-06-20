@@ -8,11 +8,12 @@ $(document).ready(function() {
 
 	// Default-Sprache setzen
 	if(localStorage.getItem('language') === null) {
-		localStorage.setItem('language','de');
+		localStorage.setItem('language', 'de');
 	}
 
-	if(localStorage.getItem('pos') === null) {
-		localStorage.setItem('pos',null);
+	// Default-Position setzen
+	if(localStorage.getItem('position') === null) {
+		localStorage.setItem('position', null);
 	}
 
 
@@ -20,13 +21,13 @@ $(document).ready(function() {
 
 		if (typeof pos !== 'undefined') {
 			//window.crd = pos.coords;
-			localStorage.setItem('pos', JSON.stringify(pos.coords));
+			localStorage.setItem('position', JSON.stringify(pos.coords));
 		}
 
-		var crd = JSON.parse(localStorage.getItem('pos'));
+		var crd = JSON.parse(localStorage.getItem('position'));
 
-		console.log(localStorage.getItem('pos'));
-		console.log(JSON.parse(localStorage.getItem('pos')));
+		//console.log(localStorage.getItem('pos'));
+		//console.log(JSON.parse(localStorage.getItem('pos')));
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 
@@ -47,14 +48,13 @@ $(document).ready(function() {
 
 	};
 
-	var error = function() {
+	var error = function(err) {
 		console.warn('ERROR(' + err.code + '): ' + err.message);
 	};
 
 	navigator.geolocation.getCurrentPosition(getAddress, error, options);
 
 	$(document).on('change','.js-language',function(e) {
-		console.log($(this).val());
 		
 		//localStorage.getItem('');
 		//localStorage.setItem('language') = $(this).val();
@@ -63,6 +63,8 @@ $(document).ready(function() {
 
 		getAddress();
 	});
+
+	//$('.js-language option').val(localStorage.getItem('language'));
 
 	$('.js-language option').each(function(){
 		if ($(this).val() === localStorage.getItem('language')) {
