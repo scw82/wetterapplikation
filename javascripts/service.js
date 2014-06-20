@@ -7,8 +7,11 @@ $(document).ready(function() {
 	};
 
 
-	var success = function(pos) {
-		window.crd = pos.coords;
+	var getAddress = function(pos) {
+
+		if (typeof pos !== 'undefined'){
+			window.crd = pos.coords;
+		}
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 
@@ -33,11 +36,17 @@ $(document).ready(function() {
 		console.warn('ERROR(' + err.code + '): ' + err.message);
 	};
 
-	navigator.geolocation.getCurrentPosition(success, error, options);
+	navigator.geolocation.getCurrentPosition(getAddress, error, options);
 
 	$(document).on('change','.js-language',function(e) {
 		console.log($(this).val());
-		console.log(crd);
+		
+		//localStorage.getItem('');
+		//localStorage.setItem('language') = $(this).val();
+
+		localStorage['language'] = $(this).val();
+
+		getAddress();
 	});
 
 });
