@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 		if (typeof pos !== 'undefined'){
 			window.crd = pos.coords;
+			localStorage.setItem('pos',pos.coords);
 		}
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
