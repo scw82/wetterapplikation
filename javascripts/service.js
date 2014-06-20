@@ -6,6 +6,11 @@ $(document).ready(function() {
   		maximumAge: 0
 	};
 
+	// Default-Sprache setzen
+	if(localStorage.getItem('language') === null) {
+		localStorage.setItem('language') = 'de';
+	}
+
 
 	var getAddress = function(pos) {
 
