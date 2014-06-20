@@ -6,8 +6,9 @@ $(document).ready(function() {
   		maximumAge: 0
 	};
 
+
 	var success = function(pos) {
-		var crd = pos.coords;
+		window.crd = pos.coords;
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 
@@ -34,8 +35,9 @@ $(document).ready(function() {
 
 	navigator.geolocation.getCurrentPosition(success, error, options);
 
-	$(document).on('change','.js-language',function() {
+	$(document).on('change','.js-language',function(e) {
 		console.log($(this).val());
+		console.log(crd);
 	});
 
 });
