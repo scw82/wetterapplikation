@@ -18,11 +18,12 @@ $(document).ready(function() {
 
 	var getAddress = function(pos) {
 
-		if (typeof pos !== 'null') {
+		if (typeof pos !== 'undefined') {
 			//window.crd = pos.coords;
-			var crd = pos.coords;
 			localStorage.setItem('pos', JSON.stringify(pos.coords));
 		}
+
+		var crd = JSON.parse(localStorage.getItem('pos'));
 
 		console.log(localStorage.getItem('pos'));
 		console.log(JSON.parse(localStorage.getItem('pos')));
@@ -60,9 +61,13 @@ $(document).ready(function() {
 
 		localStorage['language'] = $(this).val();
 
-		var pos = JSON.parse(localStorage.getItem('pos'))
-
 		getAddress();
 	});
+
+	$('.js-language option').each(function(){
+		if ($(this).val() === localStorage.getItem('language')) {
+			$(this).attr('selected',true);
+		}
+	})
 
 });
