@@ -43,7 +43,6 @@ function success(pos) {
   	url: 'https://maps.googleapis.com/maps/api/geocode/json',
   	data: {
   		latlng: crd.latitude + ',' + crd.longitude,
-      language: ko,
   		sensor: true
   	},
   	success: function(data) {
