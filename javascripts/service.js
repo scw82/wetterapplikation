@@ -23,6 +23,9 @@ $(document).ready(function() {
 			localStorage.setItem('pos', JSON.stringify(pos.coords));
 		}
 
+		console.log(localStorage.getItem('pos'));
+		console.log(JSON.parse(localStorage.getItem('pos'));
+
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 
 		$.ajax({
@@ -55,6 +58,8 @@ $(document).ready(function() {
 		//localStorage.setItem('language') = $(this).val();
 
 		localStorage['language'] = $(this).val();
+
+		var pos = JSON.parse(localStorage.getItem('pos'))
 
 		getAddress();
 	});
