@@ -18,13 +18,13 @@ $(document).ready(function() {
 
 	var getAddress = function(pos) {
 
-		if (typeof pos !== 'undefined'){
-			window.crd = pos.coords;
+		if (typeof pos !== 'null') {
+			//window.crd = pos.coords;
 			localStorage.setItem('pos', JSON.stringify(pos.coords));
 		}
 
 		console.log(localStorage.getItem('pos'));
-		console.log(JSON.parse(localStorage.getItem('pos'));
+		console.log(JSON.parse(localStorage.getItem('pos')));
 
 		$('.js-current-position').text(crd.latitude + ' / ' + crd.longitude);
 
