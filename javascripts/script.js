@@ -15,7 +15,7 @@ var weatherIcons = {
   'cloudy': 'N',
   'partly-cloudy-day': 'H',
   'partly-cloudy-night': 'I'
-}
+};
 
 
 function success(pos) {
