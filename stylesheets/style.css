@@ -15,9 +15,15 @@
 .symbol {
 	font-family: 'MeteoconsRegular';
 	font-size: 5em;
+    text-align: center;
 }
 
 .symbol:before {
 	font-family: 'MeteoconsRegular';
 	content: attr(data-icon);
+}
+
+.temperature {
+    font-size: 5em;
+    text-align: center;
 }
