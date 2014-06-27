@@ -7,7 +7,14 @@ var options = {
 var weatherIcons = {
   'clear-day': 'B',
   'clear-night': 'C',
-  'rain': 'R'
+  'rain': 'R',
+  'snow': 'X',
+  'sleet': 'W',
+  'wind': 'S',
+  'fog': 'M',
+  'cloudy': 'N',
+  'partly-cloudy-day': 'H',
+  'partly-cloudy-night': 'I'
 }
 
 
