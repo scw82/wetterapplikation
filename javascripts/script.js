@@ -10,7 +10,8 @@ var weatherIcons = {
 	'clear-day': 'B',
 	'clear-night': 'C',
 	'rain': 'R',
-	'partly-cloudy-night': 'I'
+	'partly-cloudy-night': 'I',
+	'partly-cloudy-day': 'H'
 };
 
 function success(pos) {
