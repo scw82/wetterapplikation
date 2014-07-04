@@ -1,109 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Main page</title>
+	<title>Wetterapplikation</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-	<link rel="stylesheet" href="stylesheets/style.css" />
+	<link rel="stylesheet" href="stylesheets/style.css">
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 </head>
 <body>
 
-<!-- Startseite -->
 
+
+
+<!-- Startansicht -->
 <div data-role="page" id="main">
 
-	<div data-role="panel" id="menu-main" data-display="push">
+	<div data-role="panel" id="menu" data-display="push" data-position="left">
 		<ul data-role="listview">
-			<li><a href="#main">Main</a></li>
-			<li><a href="#custom">Custom page</a></li>
+			<li>Current Location</li>
+			<li><a href="#custom">Custom Location</a></li>
 			<li><a href="#settings">Settings</a></li>
 		</ul>
 	</div><!-- /panel -->
 
 	<div data-role="header">
-		<h1>Main</h1>
-		<a href="#menu-main" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+		<h1>Main Page</h1>
+		<a href="#menu" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-btn-icon-left ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<div class="symbol js-symbol">)</div>
+		<div class="js-current-weather weather-icon">)</div>
 
-		<div class="temperature js-temp">-</div>
-
-	<form>
-     <label for="loc-search">Ort eingeben</label>
-     <input type="text" data-clear-btn="true" name="loc-search" id="loc-search" value="" class="js-loc-search">
-	</form>
 
 		<p>Current position: <span class="js-current-position">-</span></p>
-		<p>Current address: <span class="js-loc-address">-</span></p>
+		<p>Current address: <span class="js-current-address">-</span></p>
 	</div><!-- /content -->
+</div><!-- /page -->
 
-</div>
+
+
+
+
 
 <!-- Erweiterte Ansicht -->
-
 <div data-role="page" id="custom">
 
-	<div data-role="panel" id="menu-custom" data-display="push">
+	<div data-role="panel" id="menucustom" data-display="push" data-position="left">
 		<ul data-role="listview">
-			<li><a href="#main">Main</a></li>
-			<li><a href="#custom">Custom page</a></li>
+			<li><a href="#main">Current Location</a></li>
+			<li>Custom Location</li>
 			<li><a href="#settings">Settings</a></li>
 		</ul>
 	</div><!-- /panel -->
 
 	<div data-role="header">
-		<h1>Custom page</h1>
-		<a href="#menu-custom" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+		<h1 class="js-custom-location-name">Custom weather</h1>
+		<a href="#menucustom" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-btn-icon-left ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
 	</div><!-- /header -->
 
-	<div role="main" class="ui-content">
-		<p>Page content goes here.</p>
+	<div role="main" class="ui-content js-custom-location">
+		<label for="text-basic">Location name:</label>
+		<input type="text" name="text-basic" id="text-basic" value="">
+		<a href="#" class="ui-btn ui-icon-search ui-btn-icon-right js-custom-location-search">Search</a>
+		<p class="js-custom-location-result"></p>
 	</div><!-- /content -->
+</div><!-- /page -->
 
-</div>
 
 
-<!-- Settings -->
 
+
+<!-- Settings Ansicht -->
 <div data-role="page" id="settings">
 
-	<div data-role="panel" id="menu-settings" data-display="push">
+	<div data-role="panel" id="menusettings" data-display="push" data-position="left">
 		<ul data-role="listview">
-			<li><a href="#main">Main</a></li>
-			<li><a href="#custom">Custom page</a></li>
-			<li><a href="#settings">Settings</a></li>
+			<li><a href="#main">Current Location</a></li>
+			<li><a href="#custom">Custom Location</a></li>
+			<li>Settings</li>
 		</ul>
 	</div><!-- /panel -->
 
 	<div data-role="header">
 		<h1>Settings</h1>
-		<a href="#menu-settings" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
+		<a href="#menusettings" class="ui-btn ui-btn-left ui-btn-inline ui-mini ui-btn-icon-left ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Menu</a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
+
 		<form>
-			<div class="ui-field-contain">
-	    	<label for="select-native-1">Language:</label>
-		    <select name="select-native-1" id="select-native-1" class="js-language">
-		        <option value="de">Deutsch</option>
-		        <option value="fr">Français</option>
-		        <option value="it">Italiano</option>
-		        <option value="en">English</option>
-		    </select>
+		<div class="ui-field-contain">
+			<label for="select-language">Language</label>
+			<select name="select-language" id="select-language" class="js-language">
+				<option value="de">Deutsch</option>
+				<option value="en">English</option>
+				<option value="it">Italiano</option>
+				<option value="es">Espagnol</option>
+			</select>
 		</div>
 		</form>
-	</div><!-- /content -->
+
+	</div>
 
 </div>
 
 
-<script src="javascripts/service.js"></script>
 
+
+
+<script src="javascripts/service.js"></script>
 </body>
 </html>
