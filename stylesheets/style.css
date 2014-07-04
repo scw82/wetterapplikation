@@ -28,6 +28,6 @@
     text-align: center;
 }
 
-body {
-    background: url('../images/blue-sky.jpg') 0 center;
+.clear-day {
+    background: url('../images/blue-sky.jpg') 0 center contain !important;
 }
