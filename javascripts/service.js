@@ -98,7 +98,7 @@ $(document).ready(function() {
 				);
 
 				$('.js-custom-address').text(data.results[0].formatted_address);
-				$('.js-custom-position').text(crd.latitude + ', ' + crd.longitude);
+				$('.js-custom-position').text(data.results[0].geometry.location.lat + ', ' + data.results[0].geometry.location.lng);
 				$('.js-custom-location-name').text(data.results[0].address_components[0].long_name);
 				
 				$.ajax({
