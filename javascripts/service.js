@@ -57,7 +57,7 @@ $(document).ready(function() {
 			success: function(data) {
 				$('.js-current-weather').text(weatherIcons[data.currently.icon]);
 				$('.js-temp').text(data.currently.temperature + '°');
-				$('#main').css('background',data.currently.icon);
+				$('.ui-panel-wrapper').css('background',data.currently.icon);
 
 				console.log(data);
 			}
