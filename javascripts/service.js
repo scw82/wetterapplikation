@@ -73,6 +73,41 @@ $(document).ready(function() {
 
   	});
 
+	var address = $('input','.js-loc-search').val();
+
+      $.ajax({
+        url:'http://maps.googleapis.com/maps/api/geocode/json',
+        data: {
+          address: address,
+          sensor: false
+      },
+        success: function(data) {
+        console.log(data);
+        $('.js-cusadd-result').text(
+          data.results[0].geometry.location.lat +
+          ',' +
+          data.results[0].geometry.location.lng)
+        $('.js-lat').text(data.results[0].geometry.location.lat);
+        $('.js-long').text(data.results[0].geometry.location.lng);
+        $('.js-loc').text(data.results[0].formatted_address);
+        $('.js-acc').text(crd.accuracy +'m');
+
+        $.ajax({
+          url: 'https://api.forecast.io/forecast/4cbf11a0b6a5166782b8d4cb9d5defef/' + data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng,
+          data: {
+          units: 'si'
+        },
+          dataType: 'jsonp',
+          success: function(data) {
+        $('.js-temp').text.(data.currently.apparentTemperature + '°C');
+        $('.js-windsp').text(data.currently.windSpeed + 'm/s');
+        $('.js-icon').text(data.hourly.data[0].icon);
+        }
+
+        });
+      }
+    });
+
 	};
 
 	var error = function(err) {

@@ -65,7 +65,7 @@ function success(pos) {
   $('.js-custom-address').on('click','a', function(event){
       event.preventDefault();
 
-      var address = $('input','.js-loc-search').val();
+      var address = $('input','.js-custom-address').val();
 
       $.ajax({
         url:'http://maps.googleapis.com/maps/api/geocode/json',
