@@ -96,6 +96,8 @@ $(document).ready(function() {
 
 				$('.js-custom-location-name').text(data.results[0].address_components[0].long_name);
 				$('.js-custom-weather').text(weatherIcons[data.results[0].currently.icon]);
+
+				console.log(data);
 			}
 	});
 });
