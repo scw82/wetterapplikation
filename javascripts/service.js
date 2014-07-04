@@ -56,6 +56,9 @@ $(document).ready(function() {
 			dataType: 'jsonp',
 			success: function(data) {
 				$('.js-current-weather').text(weatherIcons[data.currently.icon]);
+				$('.js-temp').text(data.results.current.temperature);
+
+				console.log(data);
 			}
 		});
 
